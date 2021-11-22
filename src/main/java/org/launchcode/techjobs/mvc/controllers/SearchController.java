@@ -38,11 +38,11 @@ public class SearchController {
             model.addAttribute("title", "all Jobs");
         } else {
             jobs = JobData.findByColumnAndValue(searchType, searchTerm);
-            model.addAttribute("columns", columnChoices);
+
         }
 
         model.addAttribute("jobs", jobs);
-
+        model.addAttribute("columns", columnChoices);
         return "/list-jobs";
     }
 }
